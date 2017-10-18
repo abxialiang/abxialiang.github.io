@@ -23,13 +23,30 @@ def handle_img(img_path):
     box = (box_x, box_y, box_x + img.size[0], box_y + img.size[1])
     img_background.paste(img, box)
     # img_background.save('./out/{0}'.format(os.path.basename(img_path)))
-    os.rename(img_path, img_path + '.old')
+    # os.rename(img_path, img_path + '.old')
     img_background.save(img_path)
+
+
+def tominiimg(imgpath):
+    img = Image.open(imgpath)
+    print(img.size)
+    img.thumbnail((200, 200), Image.ANTIALIAS)
+    img.save(os.path.join(os.path.dirname(imgpath), 'cover.jpg'), quality=88)
+
+
+# 封面图片转换为800*800
+# for dirpath, dirnames, filenames in os.walk('e:\private\cloud_develop\yuestore\static\素材'):
+#     for filename in filenames:
+#         if 'cover.jpg' == filename:
+#             print(os.path.join(dirpath, filename).decode('cp936'))
+#             handle_img(os.path.join(dirpath, filename))  # 调整封面图片尺寸为800*800
+#             tominiimg(os.path.join(dirpath, filename).decode('cp936'))  # 创建封面图片缩略图
+# raw_input('800 finish,start miniimg?')
 
 
 for dirpath, dirnames, filenames in os.walk('e:\private\cloud_develop\yuestore\static\素材'):
     for filename in filenames:
-        if 'cover.jpg' == filename:
+        if '1.jpg' == filename:
             print(os.path.join(dirpath, filename).decode('cp936'))
-            handle_img(os.path.join(dirpath, filename))
-raw_input('finish')
+            tominiimg(os.path.join(dirpath, filename).decode('cp936'))  # 创建封面图片缩略图
+raw_input('miniimg finish')
