@@ -86,11 +86,11 @@ while 1:
     # 自动创建描述文件
     open(os.path.join(sondirpath, 'describe.txt'), 'w').write(u'''
 {{
-"name":"{0}",
+"name":"",
 "price":"{1}",
 "code":"{2}"
 }}
-    '''.format(jdata[0], jdata[1], u'货号').encode('utf8'))
+    '''.format(jdata[1], u'货号').encode('utf8'))
 
     for path in mymodul.fordir_path(sondirpath,ext_filtration=u'jpg'):
         print(3334,path)
