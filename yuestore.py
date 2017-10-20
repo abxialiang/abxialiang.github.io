@@ -10,17 +10,18 @@ import json
 import time
 import threading
 
-RESOUCE_VERSION = "2017-10-21"
+RESOUCE_VERSION = "2017-10-22"
 app = Flask(__name__)
 Bootstrap(app)
 
 
 class Commodity(object):
     def __init__(self):
-        name = ''  # 商品标题
-        cover_path = ''  # 封面路径
-        price = 0.00  # 价格
-        url = ''
+        self.name = ''  # 商品标题
+        self.cover_path = ''  # 封面路径
+        self.price = 0.00  # 价格
+        self.url = '' #商品页url
+        self.label = '' #额外标签,如"可选颜色"
 
 
 def createsumpage(typename):
@@ -35,6 +36,7 @@ def createsumpage(typename):
             o.cover_path = os.path.join(dirpath, 'cover.jpg?ver={}'.format(RESOUCE_VERSION))
             o.name = jdata["name"]
             o.price = jdata["price"]
+            o.label = jdata.get("label","")
             o.url = 'product' + os.path.basename(dirpath) + '.html'
             datas.append(o)
 

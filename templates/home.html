@@ -52,8 +52,10 @@
             <a href="{{ commodity.url }}" class="thumbnail" style=" height:0px; padding:0 0 130% 0;">
                 <p><img src="{{ commodity.cover_path }}" class="img-responsive center-block" alt="响应式图像"></p>
                 <div class="caption">
-                    {#                        <h6 style="height:27px;overflow:hidden;">{{ commodity.name }}</h6>#}
-                    <h6 class="text-right" style="color: orangered">{{ commodity.price }} 元</h6>
+                    <div class="h6" style="float: left;color: orangered;">
+                        <span class="label label-info">{{ commodity.label }}</span>
+                    </div>
+                    <div class="h6" style="float: right;color: orangered;">{{ commodity.price }} 元</div>
                 </div>
             </a>
         </div>
