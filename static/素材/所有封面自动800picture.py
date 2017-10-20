@@ -87,8 +87,8 @@ while 1:
     open(os.path.join(sondirpath, 'describe.txt'), 'w').write(u'''
 {{
 "name":"",
-"price":"{1}",
-"code":"{2}"
+"price":"{0}",
+"code":"{1}"
 }}
     '''.format(jdata[1], u'»õºÅ').encode('utf8'))
 
