@@ -49,13 +49,14 @@
 <div class="row">
     {% for commodity in commoditys %}
         <div class="col-xs-6 col-md-2">
-            <a href="{{ commodity.url }}" class="thumbnail" style=" height:0px; padding:0 0 130% 0;">
+            <a href="{{ commodity.url }}" class="thumbnail" style=" height:0px; padding:0 0 120% 0;">
                 <p><img src="{{ commodity.cover_path }}" class="img-responsive center-block" alt="响应式图像"></p>
                 <div class="caption">
-                    <div class="h6" style="float: left;color: orangered;">
+                    <div class="h6" style="float: left;color: orangered;margin-top: -10px;">
                         <span class="label label-info">{{ commodity.label }}</span>
                     </div>
-                    <div class="h6" style="float: right;color: orangered;">{{ commodity.price }} 元</div>
+                    <div class="h6" style="float: right;color: orangered;margin-top: -10px;">{{ commodity.price }} 元
+                    </div>
                 </div>
             </a>
         </div>
